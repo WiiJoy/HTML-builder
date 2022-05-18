@@ -74,8 +74,6 @@ function createHtml() {
                 if (item.isFile() && path.extname(item.name) === '.html') {
                     fs.readFile(path.join(__dirname, `components`, item.name), (err, data) => {
                         if (err) console.log(err)
-
-                        console.log(data)
                         
                         htmlText = htmlText.replace(`{{${item.name.slice(0, -5)}}}`, data.toString())
 
