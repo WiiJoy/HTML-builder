@@ -13,6 +13,7 @@ fs.readdir(path.join(__dirname, 'styles'), {withFileTypes: true}, (err, res) => 
         if (item.isFile() && path.extname(item.name) === '.css') {
             fs.readFile(path.join(__dirname, `styles`, item.name), (err, data) => {
                 writeBundle.write(data)
+                writeBundle.write('\n')
             })
         }
     })
