@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-fs.rm(path.join(__dirname, 'files-copy'), {force: true}, () => {
+fs.rm(path.join(__dirname, 'files-copy'), {force: true, recursive: true}, () => {
     fs.mkdir(path.join(__dirname, 'files-copy'), {recursive: true}, () => {
         fs.readdir(path.join(__dirname, 'files'), {withFileTypes: true}, (err, res) => {
             if (err) {
